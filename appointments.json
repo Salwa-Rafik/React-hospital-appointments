@@ -1,0 +1,46 @@
+{
+  "appointments": [
+    {
+      "specialization": "optical",
+      "doctorName": "Dr. Smith",
+      "date": "2023-08-28",
+      "time": "00:30",
+      "id": 4
+    },
+    {
+      "specialization": "heart",
+      "doctorName": "Dr. Anderson",
+      "date": "2023-08-31",
+      "time": "00:48",
+      "id": 5
+    },
+    {
+      "specialization": "optical",
+      "doctorName": "Dr. Smith",
+      "date": "2023-08-27",
+      "time": "00:59",
+      "id": 6
+    },
+    {
+      "specialization": "heart",
+      "doctorName": "Dr. Williams",
+      "date": "2023-08-31",
+      "time": "03:52",
+      "id": 7
+    },
+    {
+      "specialization": "heart",
+      "doctorName": "Dr. Williams",
+      "date": "2023-08-30",
+      "time": "01:56",
+      "id": 8
+    },
+    {
+      "specialization": "heart",
+      "doctorName": "Dr. Williams",
+      "date": "2023-09-25",
+      "time": "01:57",
+      "id": 9
+    }
+  ]
+}

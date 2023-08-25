@@ -1,0 +1,12 @@
+.checked-row {
+    text-decoration: line-through;
+  }
+  .custom-checkbox {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #aaa;
+    border-radius: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+  }

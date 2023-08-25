@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './Components/HomePage/HomePage';
+import AppointmentCreate from './Components/AppointmentCreate/AppointmentCreate';
+import AppointmentList from './Components/AppointmentsList/AppointmentsList';
+import AppointmentEdit from './Components/AppointmentEdit/AppointmentEdit';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+   
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/appointment/create" element={<AppointmentCreate />} />
+        <Route path="/appointments/edit/:id" element={<AppointmentEdit />} />
+        <Route path="/appointments" element={<AppointmentList />} /> 
+
+        {/* Add more routes here */}
+      </Routes>
+   
+  </BrowserRouter>
   );
 }
 
