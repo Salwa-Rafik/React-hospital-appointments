@@ -91,7 +91,7 @@ function AppointmentList() {
                         onClick={() => {
                           Removefunction(Appointment.id);
                         }}
-                        className="btn "
+                        className="btn mb-2"
                         style={{
                           backgroundColor: "#F2A9BA",
                           border: "none",
@@ -102,7 +102,7 @@ function AppointmentList() {
                       <span className="mx-1" />
                       <Link to={`/appointments/edit/${Appointment.id}`}>
                         <button
-                          className="btn "
+                          className="btn mb-2"
                           style={{
                             backgroundColor: "#60D0D1",
                             border: "none",
