@@ -42,14 +42,20 @@ function AppointmentList() {
   };
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/appointments")
-      .then((res) => {
-        Appointmentdatachange(res.data);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    const storedAppointments = JSON.parse(localStorage.getItem("appointmentData"));
+
+    if (storedAppointments) {
+      Appointmentdatachange(storedAppointments);
+    } else {
+      axios
+        .get("http://localhost:8000/appointments")
+        .then((res) => {
+          Appointmentdatachange(res.data);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
   }, []);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
@@ -113,18 +119,25 @@ function AppointmentList() {
                       </Link>
                       <span className="mx-1" />
                       <input
-                        className="custom-checkbox"
-                        type="checkbox"
-                        checked={Appointment.isChecked}
-                        disabled={
-                          new Date(Appointment.date + " " + Appointment.time) >
-                          new Date()
-                        }
-                        onChange={() => {
-                          Appointment.isChecked = !Appointment.isChecked;
-                          Appointmentdatachange([...Appointmentdata]);
-                        }}
-                      />
+                  className="custom-checkbox"
+                  type="checkbox"
+                  checked={Appointment.isChecked}
+                  disabled={
+                    new Date(Appointment.date + " " + Appointment.time) >
+                    new Date()
+                  }
+                  onChange={() => {
+                    const updatedAppointments = Appointmentdata.map(appointment => {
+                      if (appointment.id === Appointment.id) {
+                        return { ...appointment, isChecked: !appointment.isChecked };
+                      }
+                      return appointment;
+                    });
+
+                    Appointmentdatachange(updatedAppointments);
+                    localStorage.setItem("appointmentData", JSON.stringify(updatedAppointments));
+                  }}
+                />
                     </td>
                   </tr>
                 ))}
