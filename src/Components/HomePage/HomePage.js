@@ -13,10 +13,11 @@ function HomePage() {
       <Container>
         <Row>
           <Col
+            sm={3}
             md={6}
             className="content d-flex align-items-center justify-content-center"
           >
-            <div className="text-center">
+            <div className="text-center mt-5">
               <h2>Welcome to Hospital Appointments</h2>
               <Link to="/appointment/create">
                 <button className="btn btn-dark">New Appointment (+)</button>
@@ -25,6 +26,7 @@ function HomePage() {
           </Col>
 
           <Col
+            
             md={6}
             className="background-image"
             style={{ backgroundImage: `url(${backgroundImage})` }}
